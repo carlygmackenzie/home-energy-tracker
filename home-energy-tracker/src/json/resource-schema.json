@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Resource",
+    "description": "A home energy resource",
+    "type": "object",
+    "properties": {
+        "resourceId": {
+            "description": "Unique identifier for an energy resource",
+            "type": "integer"
+        },
+        "resourceName": {
+            "description": "Name of the energy resource",
+            "type": "string"
+        },
+        "resourceType": {
+            "description": "The type of resource (battery based or not)",
+            "type": "string"
+        },
+        "powerOutput": {
+            "description": "How much power the resource is currently generating (negative) or consuming (positive)",
+            "type": "number"
+        },
+        "online": {
+            "description": "Indicates if the resource is currently online or not",
+            "type": "boolean"
+        },
+        "chargeLevel": {
+            "description": "Current percentage of charge of the resource, if battery based",
+            "type": "number"
+        }
+    },
+    "required": [ "resourceId", "resourceName", "resourceType", "powerOutput", "online"]
+}

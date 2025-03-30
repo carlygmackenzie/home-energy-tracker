@@ -1,0 +1,43 @@
+{
+    "homeResources": 
+    [
+        {
+            "id": 1,
+            "name": "Solar",
+            "powerOutput": -10,
+            "online": true
+        },
+        {
+            "id": 2,
+            "name": "EV",
+            "powerOutput": 4,
+            "online": true
+        },
+        {
+            "id": 3,
+            "name": "Battery",
+            "powerOutput": 2,
+            "online": true
+        },
+        {
+            "id": 4,
+            "name": "Load",
+            "powerOutput": 2,
+            "online": true
+        }
+    ],
+    "externalResources":
+    [
+        {
+            "id": 5,
+            "name": "Grid",
+            "type": "main"
+        },
+        {
+            "id": 6,
+            "name": "Microgrid",
+            "type": "sub",
+            "availablePower": 5
+        }
+    ]  
+}

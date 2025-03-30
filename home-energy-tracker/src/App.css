@@ -1,0 +1,168 @@
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+}
+
+h2 { 
+  font-size: 1.5rem;
+  font-weight: normal;
+  background-color: #EFEFEF;
+  padding: 1rem;
+  padding-left: 5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-weight: normal;
+  margin: 0;
+  transform: translateX(15%)
+}
+
+p {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: auto;
+  gap: 1.5rem;
+}
+
+li {
+  display: grid;
+  width: 10rem;
+  height: 10rem;
+  border: 0.2rem solid #D8D8D8;
+  border-radius: 10%;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.icon {
+  width: 6rem;
+  height: 6rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.resource-title {
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
+.power {
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.green {
+  background-color: #CCE9C1;
+  color: #316C28;
+}
+
+.question-mark {
+  padding-left: 0.5rem;
+  transform: translateY(-30%);
+  width: 1.2rem;
+}
+
+.hover-box {
+  position: absolute;
+  border: 0.1rem solid grey;
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  font-size: 1rem; 
+  margin-left: 0.5rem;
+  transform: translateY(-40%);
+}
+
+.no-hover {
+  display: none;
+}
+
+.lists-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+}
+
+.Solar {
+  color: #FFCC23;
+  border: 0.2rem solid #FFCC23;
+}
+
+.EV {
+  color: #32CB10;
+  border: 0.2rem solid #32CB10;
+}
+
+.Battery {
+  color: #EA0D10;
+  border: 0.2rem solid #EA0D10;
+}
+
+.Load {
+  color: #1524FF;
+  border: 0.2rem solid #1524FF;
+}
+
+.generating {
+  color: #316C28;
+  background-color: #CCE9C1;
+  padding: 0.2rem;
+  width: 5rem;
+  border-radius: 5px;
+  align-items: center;
+  transform: translateX(43%);
+}
+
+.consuming {
+  color: #A03A3A;
+  background-color: #FFD5D5;
+  padding: 0.2rem;
+  width: 5rem;
+  border-radius: 5px;
+  align-items: center;
+  transform: translateX(43%);
+}
+
+.small-icon {
+}
