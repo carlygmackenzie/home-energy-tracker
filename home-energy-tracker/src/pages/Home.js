@@ -56,13 +56,15 @@ const Home = () => {
         <div className="App">
             <h1>My Home</h1>
             <p>Data last updated: {updateTime}</p>
-            <h2>Current Net Power Transfer Report: 
-                <span className={netPowerTrans < 0 ? "power green" : "power red"}>
-                    {netPowerTrans < 0 ? "Generating " : "Consuming "}
-                    {Math.abs(netPowerTrans)} kW 
-                </span>
-                <Hover message={powerMessage} image={"question"}/>
-            </h2>
+            <div className="test">
+                <h2>Current Net Power Transfer Report: 
+                    <span className={netPowerTrans < 0 ? "power green" : "power red"}>
+                        {netPowerTrans < 0 ? "Generating " : "Consuming "}
+                        {Math.abs(netPowerTrans)} kW 
+                    </span>
+                    <Hover message={powerMessage} image={"question"}/>
+                </h2>
+            </div>
 
             <div className="horizontal-flex-fill">
                 <ResourceList resources={extResourceData}/>

@@ -16,11 +16,15 @@ h2 {
   align-items: center;
   font-size: 1.5rem;
   font-weight: normal;
+}
+
+.test {
+  display: flex;
   background-color: #EFEFEF;
-  padding: 1rem;
   padding-left: 5rem;
-  margin-top: 0.5rem;
   margin-bottom: 1rem;
+  width: 100vw;
+  justify-content: left;
 }
 
 h3 {
@@ -41,13 +45,19 @@ ul {
 }
 
 .icon {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .horizontal-flex {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.horizontal-flex-left {
+  display: flex;
+  justify-content: baseline;
   align-items: center;
 }
 
@@ -143,9 +153,8 @@ ul {
   padding: 0.2rem;
   width: 5rem;
   min-width: 10px;
-  border-radius: 5px;
-  margin-top: 0.3rem;
-  margin-bottom: 0;
+  border-radius: 15px;
+  margin-bottom: 0.25rem;
 }
 
 .small-icon {
@@ -164,14 +173,14 @@ ul {
 
 .small-box-2 {
   position: absolute;
-  margin-top: 1.5rem;
-  font-size: 0.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.65rem;
 }
 
 .warning {
   position: absolute;
-  transform: translateY(-40%);
+  transform: translateY(-50%);
   margin-left: 0.5rem;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
