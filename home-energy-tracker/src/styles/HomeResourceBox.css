@@ -1,0 +1,14 @@
+.resource-element {
+    display: grid;
+    width: 10rem;
+    height: 10rem;
+    border: 0.2rem solid #D8D8D8;
+    border-radius: 10%;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.resource-title {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+}

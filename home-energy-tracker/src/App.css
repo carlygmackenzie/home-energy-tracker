@@ -1,27 +1,19 @@
 .App {
   text-align: left;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: normal;
 }
 
 h1 {
   font-size: 4rem;
-  font-weight: normal;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   margin-left: 5rem;
+  font-weight: normal;
 }
 
 h2 { 
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: normal;
   background-color: #EFEFEF;
@@ -34,30 +26,18 @@ h2 {
 h3 {
   font-weight: normal;
   margin: 0;
-  transform: translateX(15%)
+  transform: translateX(18%);
 }
 
 p {
-  text-align: center;
+  position: absolute;
+  text-align: right;
+  transform: translateX(180%) translateY(-250%);
   font-size: 0.75rem;
 }
 
 ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: auto;
-  gap: 1.5rem;
-}
-
-li {
-  display: grid;
-  width: 10rem;
-  height: 10rem;
-  border: 0.2rem solid #D8D8D8;
-  border-radius: 10%;
-  padding: 1rem;
-  text-transform: uppercase;
 }
 
 .icon {
@@ -65,33 +45,58 @@ li {
   height: 6rem;
 }
 
-.flex-container {
+.horizontal-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.block-container {
+.horizontal-flex-fill {
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+  margin-right: 5rem;
+  margin-left: 2.5rem;
+}
+
+.vertical-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
 }
 
-.resource-title {
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
+.horizontal-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
 }
 
 .power {
-  border-radius: 10px;
-  padding: 0.4rem;
+  border-radius: 20px;
+  padding: 0.5rem;
   margin-left: 0.5rem;
+  height: 2rem;
+  width: 200px;
 }
 
 .green {
   background-color: #CCE9C1;
   color: #316C28;
+}
+
+.green-text {
+  color: #316C28;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.red {
+  background-color: #FFD5D5;
+  color: #A03A3A;
+}
+
+.red-text {
+  color: #A03A3A;
 }
 
 .question-mark {
@@ -114,55 +119,59 @@ li {
   transform: translateY(-40%);
 }
 
-.no-hover {
+.none {
   display: none;
-}
-
-.lists-container {
-  display: flex;
-  gap: 6rem;
-  justify-content: center;
 }
 
 .Solar {
   color: #FFCC23;
-  border: 0.2rem solid #FFCC23;
 }
 
 .EV {
   color: #32CB10;
-  border: 0.2rem solid #32CB10;
 }
 
 .Battery {
   color: #EA0D10;
-  border: 0.2rem solid #EA0D10;
 }
 
 .Load {
   color: #1524FF;
-  border: 0.2rem solid #1524FF;
 }
 
-.generating {
-  color: #316C28;
-  background-color: #CCE9C1;
+.power-output {
   padding: 0.2rem;
   width: 5rem;
+  min-width: 10px;
   border-radius: 5px;
-  align-items: center;
-  transform: translateX(43%);
-}
-
-.consuming {
-  color: #A03A3A;
-  background-color: #FFD5D5;
-  padding: 0.2rem;
-  width: 5rem;
-  border-radius: 5px;
-  align-items: center;
-  transform: translateX(43%);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
 }
 
 .small-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.small-box {
+  border-radius: 10px;
+  font-size: 0.65rem;
+  padding: 0.2rem;
+  text-align: center;
+  width: 2.5rem;
+  height: 1rem;
+}
+
+.small-box-2 {
+  position: absolute;
+  margin-top: 1.5rem;
+  font-size: 0.5rem;
+}
+
+.warning {
+  position: absolute;
+  transform: translateY(-40%);
+  margin-left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
 }

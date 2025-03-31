@@ -6,7 +6,8 @@
             "name": "Solar",
             "powerOutput": -10,
             "online": true,
-            "type": "non-battery",
+            "type": "home",
+            "battery": false,
             "warnings": []
         },
         {
@@ -14,7 +15,8 @@
             "name": "EV",
             "powerOutput": 4,
             "online": true,
-            "type": "battery",
+            "type": "home",
+            "battery": true,
             "chargeLevel": 84,
             "warnings": []
         },
@@ -22,7 +24,8 @@
             "id": 3,
             "name": "Battery",
             "powerOutput": 2,
-            "type": "battery",
+            "type": "home",
+            "battery": true,
             "chargeLevel": 37,
             "online": true,
             "warnings": 
@@ -38,7 +41,8 @@
             "id": 4,
             "name": "Load",
             "powerOutput": 6,
-            "type": "non-battery",
+            "type": "home",
+            "battery": false,
             "online": true,
             "warnings": []
         }
@@ -48,13 +52,17 @@
         {
             "id": 5,
             "name": "Grid",
-            "type": "main"
+            "type": "ext",
+            "main": true,
+            "powerSupply": 0
         },
         {
             "id": 6,
             "name": "Microgrid",
-            "type": "sub",
-            "availablePower": 5
+            "type": "ext",
+            "main": false,
+            "availablePower": 5,
+            "powerSupply": 0
         }
     ]  
 }
