@@ -23,11 +23,10 @@ power supply in the microgrid(s), it then draws from the main power grid
 
 */ 
 const calcGridPowerSupply = (data, netPower) => {
-    console.log(netPower);
+
     if(netPower < 0){
         netPower = 0;
     }
-    console.log(data);
 
     data.forEach(resource => {
         if(!resource.main){
@@ -51,7 +50,6 @@ const calcGridPowerSupply = (data, netPower) => {
     // if there is still needed power, resort to main power grid
     if(netPower > 0){
         const mainIndex = data.findIndex((resource => resource.main === true));
-        console.log(mainIndex);
         data[mainIndex].powerSupply = netPower;
     }
 }

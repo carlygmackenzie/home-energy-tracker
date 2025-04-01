@@ -1,4 +1,3 @@
-
 import HomeResourceBox from "./HomeResourceBox";
 import ExtResourceBox from "./ExtResourceBox";
 import '../styles/ResourceList.css';
