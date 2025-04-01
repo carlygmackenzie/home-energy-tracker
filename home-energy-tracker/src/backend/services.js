@@ -1,7 +1,9 @@
-const express = require('express');
-const fs = require('node:fs');
-const app = express();
-const port = 5000;
+const Ajv = require('ajv');
+const fs = require('fs');
+const schema = JSON.parse(fs.readFileSync("./data/resource-schema.json", "utf-8"));
+
+const ajv = new Ajv();
+const validate = ajv.compile(schema);
 
 const calcNetPower = (data) => {
     
@@ -14,6 +16,7 @@ const calcNetPower = (data) => {
 
 // simple example algorithm for how grid and microgrid power supply might be determined... I am not sure if this is scientifically accurate
 const calcGridPowerSupply = (data, netPower) => {
+    console.log(netPower);
     if(netPower < 0){
         netPower = 0;
     }
@@ -44,28 +47,15 @@ const calcGridPowerSupply = (data, netPower) => {
     }
 }
 
-app.get('/get-energy-data', (req, res) => {
-
-    fs.readFile('./data/energyData.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
+const validateData = (data) => {
+    const validated = validate(data);
+    if(!validated){
+        console.error("Errors validating energy data:");
+            for (const err of validate.errors){
+                console.error(err);
         }
+    }
+    return validated;
+}
 
-        const jsonData = JSON.parse(data);
-        
-        const netPower = calcNetPower(jsonData.homeResources);
-        jsonData.netPower = netPower;
-        calcGridPowerSupply(jsonData.externalResources, netPower);
-        
-        // need stringify?
-        res.send(JSON.stringify(jsonData));
-    });
-    
-});
-
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});
-
-
+module.exports = { calcNetPower, calcGridPowerSupply, validateData }

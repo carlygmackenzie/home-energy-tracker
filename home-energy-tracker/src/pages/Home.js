@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import ResourceList from '../components/ResourceList';
 import Hover from '../components/Hover';
+import { LuChevronsDown, LuChevronsUp } from "react-icons/lu";
+import '../styles/Home.css';
 
 const Home = () => {
 
@@ -10,19 +12,20 @@ const Home = () => {
     const [powerMessage, setPowerMessage] = useState("");
     const [updateTime, setUpdateTime] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
 
         const fetchEnergyData = async () => {
             try{
                 const response = await fetch('/get-energy-data');
-                console.log(response);
-                if (!response.ok){
-                    setLoading(false);
-                    throw new Error(`Response status: ${response.status}`);
-                }
-                
                 const data = await response.json();
+
+                if (response.status !== 200){
+                    setLoading(false);
+                    setError(true);
+                    throw new Error(`\nStatus: ${response.status}\nMessage: ${data.message}`);
+                }
                 
                 setHomeResourceData(data.homeResources);
                 setExtResourceData(data.externalResources);
@@ -43,7 +46,7 @@ const Home = () => {
                 
             }
             catch(error){
-                console.error(error.message);
+                console.error(error);
             }
         }
 
@@ -53,20 +56,25 @@ const Home = () => {
     return (
         loading ? <div></div>
         :
+        error ? 
+        <div className="horizontal-flex error">
+            <h2>Sorry, we are unable to display your energy data at this time.</h2>
+        </div>
+        :
         <div className="App">
             <h1>My Home</h1>
-            <p>Data last updated: {updateTime}</p>
-            <div className="test">
-                <h2>Current Net Power Transfer Report: 
-                    <span className={netPowerTrans < 0 ? "power green" : "power red"}>
-                        {netPowerTrans < 0 ? "Generating " : "Consuming "}
+            <p className="update-time">Data last updated: {updateTime}</p>
+            <div className="bar">
+                <h2>Current Net Power Transfer: 
+                    <span className={`horizontal-flex power ${netPowerTrans < 0 ? 'green' : 'red'}`}>
+                        {netPowerTrans < 0 ? <LuChevronsUp className="medium"/> : <LuChevronsDown className="medium"/>}
                         {Math.abs(netPowerTrans)} kW 
                     </span>
                     <Hover message={powerMessage} image={"question"}/>
                 </h2>
             </div>
 
-            <div className="horizontal-flex-fill">
+            <div className="lists-container">
                 <ResourceList resources={extResourceData}/>
                 <div className="vertical-flex">
                     <ResourceList resources={homeResourceData} />

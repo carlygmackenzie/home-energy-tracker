@@ -4,3 +4,9 @@
     width: auto;
     gap: 1.5rem;
 }
+
+.resource-header {
+    font-weight: normal;
+    margin: 0;
+    transform: translateX(18%);
+}

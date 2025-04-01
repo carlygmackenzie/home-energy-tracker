@@ -7,7 +7,7 @@ const ResourceList = ({ resources }) => {
 
     return (
         <div className="vertical-flex">
-            <h3>{resources[0].type === "home" ? "My Resources" : "External Resources"}</h3>
+            <h3 className="resource-header">{resources[0].type === "home" ? "My Resources" : "External Resources"}</h3>
             <ul className="resource-list">
                 {resources.map(resource => 
                     

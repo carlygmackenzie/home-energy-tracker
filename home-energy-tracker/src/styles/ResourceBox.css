@@ -1,0 +1,57 @@
+.resource-box {
+    width: 12rem;
+    height: 8rem;
+    border: 0.2rem solid #D8D8D8;
+    border-radius: 20px;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.home {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.8rem;
+    row-gap: 1rem;
+}
+
+.ext {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.resource-title {
+    font-size: 1.15rem;
+    padding-left: 0.5rem;
+}
+
+.item {
+    display: flex;
+    align-items: last baseline;
+    justify-content: baseline;
+}
+
+.power-output {
+    padding: 0.2rem;
+    width: 5rem;
+    min-width: 10px;
+    border-radius: 15px;
+    margin-bottom: 0.25rem;
+}
+
+.Solar {
+    color: #FFCC23;
+}
+  
+.EV {
+    color: #32CB10;
+}
+  
+.Battery {
+    color: #EA0D10;
+}
+  
+.Load {
+    color: #1524FF;
+}

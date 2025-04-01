@@ -1,0 +1,102 @@
+{
+    "title": "Resource",
+    "description": "Energy resources",
+    "type": "object",
+    "properties": {
+        "homeResources": {
+            "description": "Resources generating or consuming energy in a user's home",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Unique identifier for an energy resource",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Name of the energy resource",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of resource (home or external)",
+                        "type": "string"
+                    },
+                    "powerOutput": {
+                        "description": "Home resources only - how much power (kW) the resource is currently generating (negative) or consuming (positive).",
+                        "type": "number"
+                    },
+                    "online": {
+                        "description": "Home resources only - indicates if the resource is currently online or not",
+                        "type": "boolean"
+                    },
+                    "battery": {
+                        "description": "Home resources only - indicates if the resource is battery-based or not",
+                        "type": "boolean"
+                    },
+                    "chargeLevel": {
+                        "description": "Home resources only - current percentage of charge of the resource, if battery based",
+                        "type": "number"
+                    },
+                    "warnings": {
+                        "description": "Home resources only - anything currently wrong with a resource that the user should know about",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }  
+                },
+                "required": [ "id", "name", "type", "powerOutput", "online", "battery"],
+                    "if": {
+                        "properties": {
+                            "battery": { "const": true}
+                        }
+                    },
+                    "then": {
+                        "required": ["chargeLevel"]
+                }
+            }   
+        },
+        "externalResources": {
+            "description": "Grids supplying power to a user's home",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Unique identifier for an energy resource",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Name of the energy resource",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of resource (home or external)",
+                        "type": "string"
+                    },
+                    "powerSupply": {
+                        "description": "How much power (kW) the resource is currently supplying to the user's home",
+                        "type": "number"
+                    },
+                    "main": {
+                        "description": "Indicates if the resource is a main grid or not (e.g. microgrid)",
+                        "type": "boolean"
+                    },
+                    "availablePower": {
+                        "description": "How much power the resource currently has available to supply to the user's home, if not a main grid",
+                        "type": "number"
+                    }
+                },
+                "required": ["id", "name", "type", "powerSupply", "main"],
+                "if": {
+                    "properties": {
+                        "main": { "const": false }
+                    }
+                },
+                "then": {
+                    "required": ["availablePower"]
+                }
+            }
+        }   
+    }
+}

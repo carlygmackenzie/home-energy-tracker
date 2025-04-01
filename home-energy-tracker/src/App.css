@@ -18,35 +18,12 @@ h2 {
   font-weight: normal;
 }
 
-.test {
-  display: flex;
-  background-color: #EFEFEF;
-  padding-left: 5rem;
-  margin-bottom: 1rem;
-  width: 100vw;
-  justify-content: left;
-}
-
-h3 {
-  font-weight: normal;
-  margin: 0;
-  transform: translateX(18%);
-}
-
-p {
-  position: absolute;
-  text-align: right;
-  transform: translateX(180%) translateY(-250%);
-  font-size: 0.75rem;
-}
-
 ul {
   list-style: none;
 }
 
-.icon {
-  width: 5rem;
-  height: 5rem;
+.none {
+  display: none;
 }
 
 .horizontal-flex {
@@ -55,18 +32,8 @@ ul {
   align-items: center;
 }
 
-.horizontal-flex-left {
-  display: flex;
-  justify-content: baseline;
-  align-items: center;
-}
-
-.horizontal-flex-fill {
-  display: flex;
-  gap: 6rem;
-  justify-content: space-between;
-  margin-right: 5rem;
-  margin-left: 2.5rem;
+.left {
+  justify-content: baseline !important;
 }
 
 .vertical-flex {
@@ -75,91 +42,39 @@ ul {
   align-items: center;
 }
 
-.horizontal-grid {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: space-between;
-}
-
-.power {
-  border-radius: 20px;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  height: 2rem;
-  width: 200px;
-}
-
 .green {
   background-color: #CCE9C1;
-  color: #316C28;
+  color: #0C4100;
 }
 
 .green-text {
-  color: #316C28;
+  color: #0C4100;
   margin-top: 0.25rem;
   font-size: 0.75rem;
 }
 
 .red {
   background-color: #FFD5D5;
-  color: #A03A3A;
+  color: #640606;
 }
 
 .red-text {
-  color: #A03A3A;
+  color: #640606;
 }
 
-.question-mark {
-  padding-left: 0.5rem;
-  transform: translateY(-30%);
-  width: 1.2rem;
-}
-
-.hover-box {
-  position: absolute;
-  border: 0.1rem solid grey;
-  background-color: white;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 15px;
-  font-size: 1rem; 
-  margin-left: 0.5rem;
-  transform: translateY(-40%);
-}
-
-.none {
-  display: none;
-}
-
-.Solar {
-  color: #FFCC23;
-}
-
-.EV {
-  color: #32CB10;
-}
-
-.Battery {
-  color: #EA0D10;
-}
-
-.Load {
-  color: #1524FF;
-}
-
-.power-output {
-  padding: 0.2rem;
-  width: 5rem;
-  min-width: 10px;
-  border-radius: 15px;
-  margin-bottom: 0.25rem;
-}
-
-.small-icon {
+.small {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.medium {
+  width: 2rem;
+  height: 2rem;
+}
+
+.large {
+  width: 5rem;
+  height: 5rem;
 }
 
 .small-box {
@@ -171,16 +86,10 @@ ul {
   height: 1rem;
 }
 
-.small-box-2 {
+.small-box-absolute {
   position: absolute;
   margin-top: 1.75rem;
   font-size: 0.65rem;
 }
 
-.warning {
-  position: absolute;
-  transform: translateY(-50%);
-  margin-left: 0.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-}
+

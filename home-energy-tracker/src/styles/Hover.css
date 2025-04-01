@@ -1,0 +1,27 @@
+.hover-box {
+    position: absolute;
+    background-color: #484848;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 20px;
+    font-size: 1rem; 
+    margin-left: 0.5rem;
+    transform: translateY(-40%);
+}
+
+.hover-warning {
+    font-size: 0.8rem;
+    text-transform: none !important;
+}
+
+.warning {
+    padding-left: 0.25rem;
+    padding-top: 0.25rem;
+    box-sizing: border-box;
+}
+
+.question-mark {
+    padding-left: 0.5rem;
+    transform: translateY(-30%);
+}

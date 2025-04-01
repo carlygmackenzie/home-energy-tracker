@@ -1,48 +1,42 @@
 {
-    "homeResources": 
-    [
+    "homeResources": [
         {
             "id": 1,
             "name": "Solar",
-            "powerOutput": -10,
-            "online": true,
             "type": "home",
+            "powerOutput": -10,
+            "online": false,
             "battery": false,
-            "warnings": []
+            "warnings": ["Resource is offline", "Something else is wrong"]
         },
         {
             "id": 2,
             "name": "EV",
+            "type": "home",
             "powerOutput": 4,
             "online": true,
-            "type": "home",
             "battery": true,
-            "chargeLevel": 84,
-            "warnings": []
+            "chargeLevel": 84
         },
         {
             "id": 3,
             "name": "Battery",
-            "powerOutput": 2,
             "type": "home",
+            "powerOutput": 2,
             "battery": true,
             "chargeLevel": 37,
-            "online": true,
-            "warnings": 
-                []
+            "online": true
         },
         {
             "id": 4,
             "name": "Load",
-            "powerOutput": 6,
             "type": "home",
-            "battery": false,
+            "powerOutput": 2,
             "online": true,
-            "warnings": []
+            "battery": false
         }
     ],
-    "externalResources":
-    [
+    "externalResources": [
         {
             "id": 5,
             "name": "Grid",
