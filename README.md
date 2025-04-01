@@ -1,7 +1,5 @@
-To run project, while in root directory:
+To run project, while in root directory (home-energy-tracker), run:
 
-1. npm install
-
-2. node src/backend/app.js
-
-3. npm start
+- npm install
+- node src/backend/app.js
+- npm start
