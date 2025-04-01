@@ -12,7 +12,7 @@ app.listen(port, () => {
 // retrieve, process, and return user energy data
 app.get('/get-energy-data', (req, res) => {
 
-    fs.readFile('./data/energy_data.json', 'utf8', (err, data) => {
+    fs.readFile('./src/backend/data/energy_data.json', 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             res.status(500).json({

@@ -1,6 +1,6 @@
 const Ajv = require('ajv');
 const fs = require('fs');
-const schema = JSON.parse(fs.readFileSync("./data/energy_data_schema.json", "utf-8"));
+const schema = JSON.parse(fs.readFileSync("./src/backend/data/energy_data_schema.json", "utf-8"));
 
 const ajv = new Ajv();
 const validate = ajv.compile(schema);
