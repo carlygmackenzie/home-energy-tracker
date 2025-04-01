@@ -32,8 +32,10 @@ ul {
   align-items: center;
 }
 
-.left {
+.horizontal-flex-left {
+  display: flex;
   justify-content: baseline !important;
+  align-items: center;
 }
 
 .vertical-flex {
@@ -76,20 +78,3 @@ ul {
   width: 5rem;
   height: 5rem;
 }
-
-.small-box {
-  border-radius: 10px;
-  font-size: 0.65rem;
-  padding: 0.2rem;
-  text-align: center;
-  width: 2.5rem;
-  height: 1rem;
-}
-
-.small-box-absolute {
-  position: absolute;
-  margin-top: 1.75rem;
-  font-size: 0.65rem;
-}
-
-

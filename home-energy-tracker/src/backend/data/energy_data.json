@@ -7,7 +7,7 @@
             "powerOutput": -10,
             "online": false,
             "battery": false,
-            "warnings": ["Resource is offline", "Something else is wrong"]
+            "warnings": ["Resource is offline, current data may not be accurate", "Some other warning"]
         },
         {
             "id": 2,

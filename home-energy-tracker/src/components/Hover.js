@@ -3,7 +3,7 @@ import { RxQuestionMarkCircled } from "react-icons/rx";
 import { IoWarningOutline } from "react-icons/io5";
 import '../styles/Hover.css';
 
-const Hover = ({ message, image, style }) => {
+const Hover = ({ message, image, addStyle }) => {
 
     const [hover, setHover] = useState(false);
 
@@ -24,10 +24,12 @@ const Hover = ({ message, image, style }) => {
     return (
         <div>
             {getImage()}
-            <span className={hover ? `hover-box ${style}` : 'none'}>
+            <span className={hover ? `hover-box ${addStyle}` : 'none'}>
                 {typeof message === 'object' ?
-                    message.map(item => 
-                        <p>{item}</p>
+                    message.map((item, index) => 
+                        <p key={index}>
+                            {item}
+                        </p>
                     )
                 :
                 <p>{message}</p>

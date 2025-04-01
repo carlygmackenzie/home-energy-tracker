@@ -7,7 +7,6 @@ import '../styles/ResourceBox.css';
 
 const HomeResourceBox = ({ homeResource }) => {
 
-    // TODO: alternative for no icon
     const getIcon = (resourceId) => {
     
         if(resourceId === 1){
@@ -28,23 +27,23 @@ const HomeResourceBox = ({ homeResource }) => {
     return (
         <div className="resource-box home">
             
-                <div className="horizontal-flex left">
+                <div className="horizontal-flex-left">
                     <span className="resource-title item">{homeResource.name}</span>
                     {homeResource.warnings && homeResource.warnings.length > 0 ?
                         <Hover message={homeResource.warnings} 
                         image="warning"
-                        style="hover-warning"/>
+                        addStyle="hover-warning"/>
                     :
                     <div></div>
                     }
                 </div>
 
                 <div className="vertical-flex item">
-                    <span className={homeResource.online ? "green small-box" : "red small-box"}>{homeResource.online ? "Online" : "Offline"}</span>
-                    <span className="small-box-absolute">{homeResource.battery ? `${homeResource.chargeLevel}% charge`: ""}</span>
+                    <span className={homeResource.online ? "green online" : "red online"}>{homeResource.online ? "Online" : "Offline"}</span>
+                    <span className="charge">{homeResource.battery ? `${homeResource.chargeLevel}% charge`: ""}</span>
                 </div>
             
-                <span className="item">{getIcon(homeResource.id)}</span>
+                <span>{getIcon(homeResource.id)}</span>
                 <div className="item">
                     <span className={homeResource.powerOutput < 0 ? "horizontal-flex power-output green": "horizontal-flex power-output red"}>
                         {homeResource.powerOutput < 0 ? <LuChevronsUp className="small"/> : <LuChevronsDown className="small"/>}

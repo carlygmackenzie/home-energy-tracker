@@ -46,14 +46,18 @@
                     }  
                 },
                 "required": [ "id", "name", "type", "powerOutput", "online", "battery"],
-                    "if": {
-                        "properties": {
-                            "battery": { "const": true}
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "battery": { "const": true }
+                            }
+                        },
+                        "then": {
+                            "required": ["chargeLevel"]
                         }
-                    },
-                    "then": {
-                        "required": ["chargeLevel"]
-                }
+                    }
+                ]
             }   
         },
         "externalResources": {
@@ -88,15 +92,28 @@
                     }
                 },
                 "required": ["id", "name", "type", "powerSupply", "main"],
-                "if": {
-                    "properties": {
-                        "main": { "const": false }
-                    }
-                },
-                "then": {
-                    "required": ["availablePower"]
+                "allOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "main": { "const": false }
+                            }
+                        },
+                        "then": {
+                            "required": ["availablePower"]
+                        }
+                    } 
+                ]
+            },
+            "oneOf": [
+                { 
+                    "type": "array",
+                    "contains": {
+                        "type": "object",
+                        "properties": { "main": { "const": true } }
+                    }                
                 }
-            }
-        }   
+            ]   
+        }
     }
 }

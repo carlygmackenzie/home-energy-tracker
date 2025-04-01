@@ -9,7 +9,7 @@ const Home = () => {
     const [homeResourceData, setHomeResourceData] = useState([]);
     const [extResourceData, setExtResourceData] = useState([]);
     const [netPowerTrans, setNetPowerTrans] = useState(0);
-    const [powerMessage, setPowerMessage] = useState("");
+    const [hoverMessage, setHoverMessage] = useState("");
     const [updateTime, setUpdateTime] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -33,13 +33,13 @@ const Home = () => {
                 setUpdateTime(new Date().toString());
 
                 if(data.netPower < 0){
-                    setPowerMessage(`Your home is currently generating ${Math.abs(data.netPower)} kW of extra power`);
+                    setHoverMessage(`Your home is currently generating ${Math.abs(data.netPower)} kW of extra power`);
                 }
                 else if(data.netPower > 0){
-                    setPowerMessage(`Your home is currently consuming ${data.netPower} kW of power from external grid(s)`)
+                    setHoverMessage(`Your home is currently consuming ${data.netPower} kW of power from external grid(s)`)
                 }
                 else{
-                    setPowerMessage(`Your home is currently consuming and generating power at an equal rate`);
+                    setHoverMessage(`Your home is currently consuming and generating power at an equal rate`);
                 }
 
                 setLoading(false);
@@ -66,11 +66,11 @@ const Home = () => {
             <p className="update-time">Data last updated: {updateTime}</p>
             <div className="bar">
                 <h2>Current Net Power Transfer: 
-                    <span className={`horizontal-flex power ${netPowerTrans < 0 ? 'green' : 'red'}`}>
-                        {netPowerTrans < 0 ? <LuChevronsUp className="medium"/> : <LuChevronsDown className="medium"/>}
+                    <span className={`horizontal-flex power ${netPowerTrans <= 0 ? 'green' : 'red'}`}>
+                        {netPowerTrans <= 0 ? <LuChevronsUp className="medium"/> : <LuChevronsDown className="medium"/>}
                         {Math.abs(netPowerTrans)} kW 
                     </span>
-                    <Hover message={powerMessage} image={"question"}/>
+                    <Hover message={hoverMessage} image={"question"}/>
                 </h2>
             </div>
 

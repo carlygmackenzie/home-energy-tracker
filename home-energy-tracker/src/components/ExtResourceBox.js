@@ -3,7 +3,6 @@ import '../styles/ResourceBox.css';
 
 const ExtResourceBox = ({ extResource }) => {
 
-    // TODO: alternative for no icon
     const getIcon = (resourceId) => {
         if(resourceId === 5){
             return <MdOutlineGrid4X4 className="large"/>

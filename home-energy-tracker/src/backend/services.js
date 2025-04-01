@@ -1,10 +1,11 @@
 const Ajv = require('ajv');
 const fs = require('fs');
-const schema = JSON.parse(fs.readFileSync("./data/resource-schema.json", "utf-8"));
+const schema = JSON.parse(fs.readFileSync("./data/energy_data_schema.json", "utf-8"));
 
 const ajv = new Ajv();
 const validate = ajv.compile(schema);
 
+// calculate the current net power transfer of a home
 const calcNetPower = (data) => {
     
     let netPower = 0;
@@ -14,12 +15,19 @@ const calcNetPower = (data) => {
     return netPower;
 }
 
-// simple example algorithm for how grid and microgrid power supply might be determined... I am not sure if this is scientifically accurate
+/*
+Simple function to calculate how grid and microgrid power supply might be determined - not sure if it is accurate to real-life scenarios
+
+This code assumes that when a home is in need of more power, it first draws from a microgrid(s), and if there is no remaining available 
+power supply in the microgrid(s), it then draws from the main power grid
+
+*/ 
 const calcGridPowerSupply = (data, netPower) => {
     console.log(netPower);
     if(netPower < 0){
         netPower = 0;
     }
+    console.log(data);
 
     data.forEach(resource => {
         if(!resource.main){
@@ -42,11 +50,13 @@ const calcGridPowerSupply = (data, netPower) => {
 
     // if there is still needed power, resort to main power grid
     if(netPower > 0){
-        const mainIndex = data.findIndex((resource => resource.type === 'main'));
+        const mainIndex = data.findIndex((resource => resource.main === true));
+        console.log(mainIndex);
         data[mainIndex].powerSupply = netPower;
     }
 }
 
+// validate data against provided JSON schema
 const validateData = (data) => {
     const validated = validate(data);
     if(!validated){

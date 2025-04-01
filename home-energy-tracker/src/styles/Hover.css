@@ -8,6 +8,7 @@
     font-size: 1rem; 
     margin-left: 0.5rem;
     transform: translateY(-40%);
+    z-index: 1000;
 }
 
 .hover-warning {
